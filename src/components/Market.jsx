@@ -56,7 +56,7 @@ function Fruit(props) {
   return (
     <div>
       <span>{name}</span>
-      <button onClick={evt => addToCart(name)}>Add To Cart</button>
+      <button onClick={event => addToCart(name)}>Add To Cart</button>
     </div>
   );
 }
