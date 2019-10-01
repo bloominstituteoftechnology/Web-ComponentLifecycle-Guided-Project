@@ -1,29 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const todoList = [
-  { id: '1', name: "sweeping", completed: false },
-  { id: '2', name: "mopping", completed: false },
-  { id: '3', name: "washing dishes", completed: false },
-];
+const todosApi = 'http://localhost:4000/todos';
 
-export default function Todos(props) {
-  const [todos, setTodos] = useState(todoList);
+export default function Todos({ user }) {
+  const [todos, setTodos] = useState([]);
+
   const markTodo = (id, isComplete) => event => {
-    // markTodo needs to return a function that takes an event,
-    // se we can attach it to a click handler in the JSX
     setTodos(todos.map(todo => {
       if (todo.id !== id) return todo;
       return { id: todo.id, name: todo.name, complete: isComplete };
     }));
   };
+
+  useEffect(() => {
+    axios.get(todosApi).then(res => setTodos(res.data));
+  }, []);
+
   return (
     <div className='component'>
+      <h5>{user} todos:</h5>
       {
         todos.map((todo) => (
           <div key={todo.id}>
-            {todo.name} is {!todo.complete && 'NOT '}completed
-            <button onClick={markTodo(todo.id, true)}>Mark complete</button>
-            <button onClick={markTodo(todo.id, false)}>Mark incomplete</button>
+            {todo.name} {!todo.complete && 'NOT '}completed
+            <button onClick={markTodo(todo.id, true)}>Mark done</button>
+            <button onClick={markTodo(todo.id, false)}>Mark undone</button>
           </div>
         ))
       }

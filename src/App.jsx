@@ -8,8 +8,8 @@ import Market from './components/Market';
 import './App.less';
 
 ReactDOM.render(<>
-  <Counter />
-  <Todos />
-  <Form />
-  <Market />
+  <Counter user='Pere' />
+  <Todos user='Pereira' />
+  <Form user='Mariam' />
+  <Market user='Megan' />
 </>, document.querySelector('#target'));

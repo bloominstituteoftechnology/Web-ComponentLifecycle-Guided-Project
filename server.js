@@ -7,6 +7,11 @@ app.use(cors());
 
 const fruits = ['pear', 'mango', 'banana', 'kiwi'];
 const meats = ['beef', 'chicken', 'fish'];
+const todoList = [
+  { id: '1', name: "sweeping", completed: false },
+  { id: '2', name: "mopping", completed: false },
+  { id: '3', name: "washing dishes", completed: false },
+];
 
 app.get('/market/fruits', (req, res) => {
   res.json(fruits);
@@ -14,6 +19,10 @@ app.get('/market/fruits', (req, res) => {
 
 app.get('/market/meats', (req, res) => {
   res.json(meats);
+});
+
+app.get('/todos', (req, res) => {
+  res.json(todoList);
 });
 
 app.get('*', (req, res) => {
