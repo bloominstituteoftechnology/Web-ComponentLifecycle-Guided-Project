@@ -17,15 +17,5 @@ export default function Counter({ user }) {
 }
 
 class TheCounter extends React.Component {
-  constructor(props) {
-    
-  }
 
-  increment = () => { }
-
-  decrement = () => { }
-
-  render() {
-    return null;
-  }
 }
