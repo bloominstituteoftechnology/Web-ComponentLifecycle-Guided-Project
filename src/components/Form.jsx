@@ -6,12 +6,10 @@ export default function Form({ user }) {
     lname: '',
   });
 
-  const onValueChange = event => {
-    setFormValues({
-      ...formValues,
-      [event.target.name]: event.target.value,
-    });
-  };
+  const onValueChange = event => setFormValues({
+    ...formValues,
+    [event.target.name]: event.target.value,
+  });
 
   const onFormSubmit = event => {
     event.preventDefault();

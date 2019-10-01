@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 
 export default function Counter({ user }) {
   const [count, setCount] = useState(0);
+
   const increment = event => setCount(count + 1);
   const decrement = event => setCount(count - 1);
+
   return (
     <div className='component'>
       <h5>{user}&apos;s count:</h5>
