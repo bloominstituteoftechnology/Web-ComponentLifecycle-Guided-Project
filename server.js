@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const uuid = require('uuid');
 
 const app = express();
 app.use(express.json());
@@ -8,9 +9,9 @@ app.use(cors());
 const fruits = ['pear', 'mango', 'banana'];
 const meats = ['beef', 'chicken', 'fish'];
 const todoList = [
-  { id: '1', name: "sweeping", completed: false },
-  { id: '2', name: "mopping", completed: false },
-  { id: '3', name: "washing dishes", completed: false },
+  { id: uuid(), name: "sweeping", completed: false },
+  { id: uuid(), name: "mopping", completed: false },
+  { id: uuid(), name: "washing dishes", completed: false },
 ];
 
 app.get('/market/fruits', (req, res) => {
