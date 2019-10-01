@@ -6,16 +6,16 @@ const todosApi = 'http://localhost:4000/todos';
 export default function Todos({ user }) {
   const [todos, setTodos] = useState([]);
 
+  useEffect(() => {
+    axios.get(todosApi).then(res => setTodos(res.data));
+  }, []);
+
   const markTodo = (id, isComplete) => event => {
     setTodos(todos.map(todo => {
       if (todo.id !== id) return todo;
       return { id: todo.id, name: todo.name, complete: isComplete };
     }));
   };
-
-  useEffect(() => {
-    axios.get(todosApi).then(res => setTodos(res.data));
-  }, []);
 
   return (
     <div className='component' style={{ borderColor: 'gold' }}>
