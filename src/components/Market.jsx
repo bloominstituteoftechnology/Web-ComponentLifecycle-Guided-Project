@@ -29,7 +29,7 @@ export default function Market({ user }) {
   }, []);
 
   return (
-    <div className="component">
+    <div className="component" style={{ borderColor: 'blue' }}>
       <h5>{user}&apos;s Shopping:</h5>
       <Fruits fruits={stock.fruits} addToCart={addToCart} />
       <Fruits fruits={stock.meats} addToCart={addToCart} /><br />

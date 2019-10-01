@@ -7,7 +7,7 @@ export default function Counter({ user }) {
   const decrement = event => setCount(count - 1);
 
   return (
-    <div className='component'>
+    <div style={{ borderColor: 'red' }} className='component'>
       <h5>{user}&apos;s count:</h5>
       <div>The count is {count}</div>
       <button onClick={increment}>increment</button>

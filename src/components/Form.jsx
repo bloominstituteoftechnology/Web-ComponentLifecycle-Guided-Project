@@ -17,7 +17,11 @@ export default function Form({ user }) {
   };
 
   return (
-    <form className='component' onSubmit={onFormSubmit}>
+    <form
+      className='component'
+      onSubmit={onFormSubmit}
+      style={{ borderColor: 'green' }}
+    >
       <h5>{user}&apos;s best friend:</h5>
       <label>first name
         <input value={formValues.fname} onChange={onValueChange} name='fname' />

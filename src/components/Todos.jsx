@@ -18,7 +18,7 @@ export default function Todos({ user }) {
   }, []);
 
   return (
-    <div className='component'>
+    <div className='component' style={{ borderColor: 'gold' }}>
       <h5>{user}&apos;s todos:</h5>
       {
         todos.map((todo) => (
