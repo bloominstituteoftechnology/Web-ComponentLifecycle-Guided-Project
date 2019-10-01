@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Component } from 'react';
 
 export default function Counter({ user }) {
   const [count, setCount] = useState(0);
@@ -16,6 +16,6 @@ export default function Counter({ user }) {
   );
 }
 
-class TheCounter extends React.Component {
+export class TheCounter extends Component {
 
 }
