@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const fruits = ['pear', 'mango', 'banana', 'kiwi'];
+const fruits = ['pear', 'mango', 'banana'];
 const meats = ['beef', 'chicken', 'fish'];
 const todoList = [
   { id: '1', name: "sweeping", completed: false },
