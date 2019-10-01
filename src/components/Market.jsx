@@ -4,11 +4,12 @@ import axios from 'axios';
 const fruitsApi = 'http://localhost:4000/market/fruits';
 const meatsApi = 'http://localhost:4000/market/meats';
 
-function Market() {
+export default function Market({ user }) {
   const [stock, setStock] = useState({
     fruits: [],
     meats: [],
   });
+
   const [cart, setCart] = useState([]);
 
   const addToCart = (item) => {
@@ -29,21 +30,18 @@ function Market() {
 
   return (
     <div className="component">
+      <h5>{user}&apos;s Shopping:</h5>
       <Fruits fruits={stock.fruits} addToCart={addToCart} />
-      <Fruits fruits={stock.meats} addToCart={addToCart} />
+      <Fruits fruits={stock.meats} addToCart={addToCart} /><br />
       <Cart items={cart} />
     </div>
   );
 }
 
-export default Market;
-
-
 function Cart(props) {
   const { items } = props;
   return (
     <>
-      <h5>Cart:</h5>
       {
         items.length
           ? items.map((item, idx) => <div key={idx}>{item}</div>)

@@ -19,7 +19,7 @@ export default function Todos({ user }) {
 
   return (
     <div className='component'>
-      <h5>{user} todos:</h5>
+      <h5>{user}&apos;s todos:</h5>
       {
         todos.map((todo) => (
           <div key={todo.id}>
