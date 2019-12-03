@@ -20,6 +20,7 @@ export default function Counter({ user }) {
   }, []);
 
   useEffect(() => {
+    debugger
     console.log(`
       DOM surgery is done after first render OR subsequent renders
       which are caused by changes in "count"
