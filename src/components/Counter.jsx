@@ -38,7 +38,9 @@ export default class CounterNew extends Component {
       - set timers
       - set up event listeners
   `);
-    if (oldState.count === 6 && this.state.count === 7) {
+    if (oldState.count !== this.state.count) {
+      // arb code that runs only if it's count that changed
+      // useEffect() [count] <- runs after 1st DOM surgery, and sub
       console.log(`old count was ${oldState.count} and new count is ${this.state.count}`);
     }
     debugger
