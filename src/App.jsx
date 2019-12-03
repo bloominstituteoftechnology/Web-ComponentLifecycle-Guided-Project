@@ -15,9 +15,9 @@ function App() {
     <button onClick={() => setCounterOn(false)}>counter off</button>
 
     {counterOn && <Counter user='Pere' />}
-    <Todos user='Pereira' />
+    {/* <Todos user='Pereira' />
     <Form user='Mariam' />
-    <Market user='Megan' />
+    <Market user='Megan' /> */}
   </>;
 }
 
