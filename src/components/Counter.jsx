@@ -6,6 +6,21 @@ export default class CounterNew extends Component {
     this.state = {
       count: 0,
     };
+    console.log(`
+      the component is being instantiated (constructor)
+    `);
+  }
+
+  componentDidMount() { // do not use arrow syntax for lifecycles
+    console.log(`
+      count is ${this.state.count} and DOM surgery is done after first render.
+      This is where you do:
+        - ajax requests
+        - further DOM surgery using jQuery
+        - set timers
+        - set up event listeners
+    `);
+    debugger
   }
 
   increment = () => {
