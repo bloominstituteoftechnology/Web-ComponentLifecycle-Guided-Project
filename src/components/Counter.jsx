@@ -15,6 +15,8 @@ export default function Counter({ user }) {
         - set timers
         - set up event listeners
     `);
+    // axios.get().then(res => put response is state)
+    setCount(1);
   }, []);
 
   console.log(`
