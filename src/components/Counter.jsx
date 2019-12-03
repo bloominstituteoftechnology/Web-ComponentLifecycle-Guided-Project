@@ -6,6 +6,8 @@ export default function Counter({ user }) {
   const increment = event => setCount(count + 1);
   const decrement = event => setCount(count - 1);
 
+  console.log('render runs at count of', count);
+  debugger
   return (
     <div style={{ borderColor: 'red' }} className='component'>
       <h5>{user}&apos;s count:</h5>
