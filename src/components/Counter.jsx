@@ -22,9 +22,25 @@ export default class CounterNew extends Component {
         - set timers
         - set up event listeners
     `);
+    this.setState({ count: 1 });
     debugger
   }
 
+  componentDidUpdate(oldProps, oldState) {
+    console.log(`
+    count is ${this.state.count} and DOM surgery is done after
+    SUBSEQUENT DOM SURGERIES CAUSED BY WHATEVER CHANGE IN STATE OR PROPS.
+    THIS DOES NOT RUN AFTER 1ST DOM SURGERY
+    **** componentDidUpdate ****
+    This is where you do:
+      - ajax requests
+      - further DOM surgery using jQuery
+      - set timers
+      - set up event listeners
+  `);
+  debugger
+  }
+ 
   increment = () => {
     this.setState({
       // eslint is not happy
