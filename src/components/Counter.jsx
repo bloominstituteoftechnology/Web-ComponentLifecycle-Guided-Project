@@ -1,6 +1,33 @@
 import React, { useState, useEffect, Component } from 'react';
 
-export default function Counter({ user }) {
+export default class CounterNew extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      count: 0,
+    }
+  }
+
+  increment = () => {
+    this.setState({
+      count: this.state.count + 1
+    });
+  }
+
+  decrement = () => {
+    this.setState({
+      count: this.state.count - 1
+    })
+  }
+
+  render() {
+    return (
+
+    )
+  }
+}
+
+export function Counter({ user }) {
   const [count, setCount] = useState(0);
 
   const increment = event => setCount(count + 1);
