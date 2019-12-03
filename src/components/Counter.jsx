@@ -9,6 +9,7 @@ export default class CounterNew extends Component {
     console.log(`
       the component is being instantiated (constructor)
     `);
+    debugger
   }
 
   componentDidMount() { // do not use arrow syntax for lifecycles
@@ -40,6 +41,10 @@ export default class CounterNew extends Component {
   }
 
   render() {
+    console.log(`
+      count is ${this.state.count} and the component is about to render.
+    `);
+    debugger
     return (
       <div style={{ borderColor: 'red' }} className='component'>
         <h5>{this.props.user}&apos;s count:</h5>
