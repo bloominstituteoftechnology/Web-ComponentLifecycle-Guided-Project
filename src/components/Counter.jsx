@@ -2,10 +2,10 @@ import React, { useState, useEffect, Component } from 'react';
 
 export default class CounterNew extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       count: 0,
-    }
+    };
   }
 
   increment = () => {
@@ -17,12 +17,17 @@ export default class CounterNew extends Component {
   decrement = () => {
     this.setState({
       count: this.state.count - 1
-    })
+    });
   }
 
   render() {
     return (
-
+      <div style={{ borderColor: 'red' }} className='component'>
+        <h5>{this.props.user}&apos;s count:</h5>
+        <div>The count is {this.state.count}</div>
+        <button onClick={this.increment}>increment</button>
+        <button onClick={this.decrement}>decrement</button>
+      </div>
     )
   }
 }
