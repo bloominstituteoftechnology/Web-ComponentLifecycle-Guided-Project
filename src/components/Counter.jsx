@@ -1,4 +1,4 @@
-import React, { useState, Component } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 
 export default function Counter({ user }) {
   const [count, setCount] = useState(0);
@@ -6,7 +6,21 @@ export default function Counter({ user }) {
   const increment = event => setCount(count + 1);
   const decrement = event => setCount(count - 1);
 
-  console.log('render runs at count of', count);
+  useEffect(() => {
+    debugger
+    console.log(`
+      DOM surgery is done, after first OR
+      subsequent renders. This is where you do:
+        - ajax requests
+        - further DOM surgery using jQuery
+        - set timers
+        - set up event listeners
+    `);
+  });
+
+  console.log(`
+    render runs at count of
+  `, count);
   debugger
   return (
     <div style={{ borderColor: 'red' }} className='component'>
