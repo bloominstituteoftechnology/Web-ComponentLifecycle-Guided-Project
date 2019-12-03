@@ -19,6 +19,15 @@ export default function Counter({ user }) {
     setCount(1);
   }, []);
 
+  useEffect(() => {
+    console.log(`
+      DOM surgery is done after first render OR subsequent renders
+      which are caused by changes in "count"
+      This is where you do:
+        - etc etc
+    `);
+  }, [count]);
+
   console.log(`
     render runs at count of ${count}
   `);
