@@ -19,6 +19,7 @@ export default class CounterNew extends Component {
     // the right way to compute
     // new slice off of old slice
     this.setState(st => ({
+      // callback syntax
       count: st.count - 1,
     }));
   }
