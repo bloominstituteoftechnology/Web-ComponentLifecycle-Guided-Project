@@ -9,18 +9,17 @@ export default function Counter({ user }) {
   useEffect(() => {
     debugger
     console.log(`
-      DOM surgery is done, after first OR
-      subsequent renders. This is where you do:
+      DOM surgery is done after first render. This is where you do:
         - ajax requests
         - further DOM surgery using jQuery
         - set timers
         - set up event listeners
     `);
-  });
+  }, []);
 
   console.log(`
-    render runs at count of
-  `, count);
+    render runs at count of ${count}
+  `);
   debugger
   return (
     <div style={{ borderColor: 'red' }} className='component'>
