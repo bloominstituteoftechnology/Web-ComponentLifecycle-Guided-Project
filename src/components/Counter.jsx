@@ -15,7 +15,3 @@ export default function Counter({ user }) {
     </div>
   );
 }
-
-export class TheCounter extends Component {
-
-}
