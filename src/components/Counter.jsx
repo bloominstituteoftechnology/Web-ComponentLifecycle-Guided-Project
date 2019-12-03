@@ -15,6 +15,7 @@ export default class CounterNew extends Component {
   componentDidMount() { // do not use arrow syntax for lifecycles
     console.log(`
       count is ${this.state.count} and DOM surgery is done after first render.
+      **** componentDidMount ****
       This is where you do:
         - ajax requests
         - further DOM surgery using jQuery
