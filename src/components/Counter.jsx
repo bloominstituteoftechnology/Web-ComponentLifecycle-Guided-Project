@@ -9,7 +9,7 @@ export default function Counter({ user }) {
   useEffect(() => {
     debugger
     console.log(`
-      DOM surgery is done after first render. This is where you do:
+      count is ${count} and DOM surgery is done after first render. This is where you do:
         - ajax requests
         - further DOM surgery using jQuery
         - set timers
@@ -22,7 +22,7 @@ export default function Counter({ user }) {
   useEffect(() => {
     debugger
     console.log(`
-      DOM surgery is done after first render OR subsequent renders
+    count is ${count} and DOM surgery is done after first render OR subsequent renders
       which are caused by changes in "count"
       This is where you do:
         - etc etc
