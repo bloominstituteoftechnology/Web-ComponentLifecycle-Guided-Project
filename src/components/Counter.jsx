@@ -10,14 +10,17 @@ export default class CounterNew extends Component {
 
   increment = () => {
     this.setState({
-      count: this.state.count + 1
+      // eslint is not happy
+      count: this.state.count + 1,
     });
   }
 
   decrement = () => {
-    this.setState({
-      count: this.state.count - 1
-    });
+    // the right way to compute
+    // new slice off of old slice
+    this.setState(st => ({
+      count: st.count - 1,
+    }));
   }
 
   render() {
@@ -28,7 +31,7 @@ export default class CounterNew extends Component {
         <button onClick={this.increment}>increment</button>
         <button onClick={this.decrement}>decrement</button>
       </div>
-    )
+    );
   }
 }
 
