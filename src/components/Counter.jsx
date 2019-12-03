@@ -22,7 +22,7 @@ export default class CounterNew extends Component {
         - set timers
         - set up event listeners
     `);
-    this.setState({ count: 1 });
+    // this.setState({ count: 1 });
     debugger
   }
 
@@ -38,9 +38,16 @@ export default class CounterNew extends Component {
       - set timers
       - set up event listeners
   `);
-  debugger
+    debugger
   }
- 
+
+  componentWillUnmount() {
+    // this code runs BEFORE
+    // the component is unmounted
+    console.log('component about to be removed from DOM, do cleanup');
+    debugger
+  }
+
   increment = () => {
     this.setState({
       // eslint is not happy
