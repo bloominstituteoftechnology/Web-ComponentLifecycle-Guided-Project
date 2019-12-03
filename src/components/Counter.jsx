@@ -38,6 +38,9 @@ export default class CounterNew extends Component {
       - set timers
       - set up event listeners
   `);
+    if (oldState.count === 6 && this.state.count === 7) {
+      console.log(`old count was ${oldState.count} and new count is ${this.state.count}`);
+    }
     debugger
   }
 
@@ -97,6 +100,10 @@ export function Counter({ user }) {
     `);
     // axios.get().then(res => put response is state)
     setCount(1);
+
+    return () => {
+      console.log('this runs only right before component unmount');
+    };
   }, []);
 
   useEffect(() => {
